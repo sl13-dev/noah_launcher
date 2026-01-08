@@ -3,93 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noah Launcher</title>
+  <title>Noah Launcher – Streaming Potenciado</title>
+
   <style>
+    :root {
+      --bg-main: #020617;
+      --bg-card: #0f172a;
+      --bg-soft: #020617;
+      --primary: #38bdf8;
+      --secondary: #818cf8;
+      --text-main: #e5e7eb;
+      --text-muted: #94a3b8;
+      --border-soft: rgba(148,163,184,0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(1200px 600px at top, #0f172a, var(--bg-main));
+      color: var(--text-main);
       line-height: 1.6;
     }
+
     header {
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem 4rem;
       text-align: center;
-      background: linear-gradient(135deg, #1e293b, #020617);
     }
+
     header h1 {
-      font-size: 2.5rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       margin-bottom: 1rem;
+      letter-spacing: -0.02em;
     }
+
+    header h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     header p {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
-      color: #cbd5f5;
+      font-size: 1.1rem;
+      color: var(--text-muted);
     }
+
     section {
-      padding: 3rem 1.5rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 3.5rem 1.5rem;
     }
-    h2 {
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
+
+    .section-title {
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--bg-card), var(--bg-soft));
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 1.5rem 1.5rem 1.7rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1.15rem;
       color: #f8fafc;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
     }
-    li {
-      margin-bottom: 1rem;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-    li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #38bdf8;
-    }
-    footer {
+
+    .highlight {
+      background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(129,140,248,0.08));
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 2.5rem;
       text-align: center;
-      padding: 2rem 1rem;
-      background: #020617;
-      color: #94a3b8;
+    }
+
+    .highlight p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+      color: var(--text-muted);
       font-size: 0.9rem;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Noah Launcher</h1>
+  <h1>Noah <span>Launcher</span></h1>
   <p>
     Una experiencia de streaming superior a Stremio.  
-    Todo lo que ya conoces, potenciado con funciones avanzadas para usuarios que exigen más.
+    Todo lo que ya conoces, llevado al siguiente nivel para usuarios que exigen más.
   </p>
 </header>
 
 <section>
-  <h2>¿Qué es Noah Launcher?</h2>
-  <p>
-    Noah Launcher es la evolución natural de Stremio. Mantiene la compatibilidad total con tus
-    addons y configuración, añadiendo mejoras clave que transforman la experiencia de uso.
-  </p>
+  <div class="highlight">
+    <p>
+      Noah Launcher es la evolución natural de Stremio. Mantiene compatibilidad total con tus
+      addons y configuración, añadiendo mejoras clave que transforman la experiencia de streaming.
+    </p>
+  </div>
 </section>
 
 <section>
-  <h2>Características principales</h2>
-  <ul>
-    <li><strong>Perfiles múltiples:</strong> historial y progreso independientes para cada usuario.</li>
-    <li><strong>Metadatos enriquecidos (TMDB):</strong> sinopsis extendidas, trailers y detalles completos.</li>
-    <li><strong>Valoraciones extendidas:</strong> ratings de múltiples fuentes como TMDB e IMDb.</li>
-    <li><strong>Reparto detallado:</strong> cast con fotos, roles y biografías.</li>
-    <li><strong>Reproductor nativo mejorado:</strong> mejor gestión de buffer y selección automática de calidad.</li>
-    <li><strong>Búsqueda avanzada:</strong> filtros inteligentes y resultados precisos.</li>
-    <li><strong>Integración total con Stremio:</strong> migración automática y compatibilidad completa.</li>
-    <li><strong>Gestión optimizada de addons:</strong> interfaz clara y mejor detección de errores.</li>
-  </ul>
+  <h2 class="section-title">
+    Características <span>principales</span>
+  </h2>
+
+  <div class="features">
+    <div class="card">
+      <h3>Perfiles múltiples</h3>
+      <p>Historial, progreso y recomendaciones independientes para cada usuario.</p>
+    </div>
+
+    <div class="card">
+      <h3>Metadatos enriquecidos</h3>
+      <p>Sinopsis extendidas, trailers integrados y detalles completos desde TMDB.</p>
+    </div>
+
+    <div class="card">
+      <h3>Valoraciones extendidas</h3>
+      <p>Ratings combinados de TMDB, IMDb y más fuentes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Reparto detallado</h3>
+      <p>Cast con fotos, roles y navegación entre trabajos relacionados.</p>
+    </div>
+
+    <div class="card">
+      <h3>Reproductor nativo mejorado</h3>
+      <p>Mejor buffer, carga más fluida y selección automática de calidad.</p>
+    </div>
+
+    <div class="card">
+      <h3>Búsqueda avanzada</h3>
+      <p>Filtros refinados y resultados precisos al instante.</p>
+    </div>
+
+    <div class="card">
+      <h3>Integración con Stremio</h3>
+      <p>Migración automática y compatibilidad total con addons existentes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Gestión optimizada de addons</h3>
+      <p>Interfaz clara, catálogos organizados y detección de errores.</p>
+    </div>
+  </div>
 </section>
 
 <footer>
